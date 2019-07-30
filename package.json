@@ -1,7 +1,7 @@
 {
-  "name": "mongoose-paginate",
+  "name": "@vitta-health/mongoose-paginate",
   "description": "Pagination plugin for Mongoose",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "author": {
     "name": "Edward Hotchkiss",
     "email": "edward@edwardhotchkiss.com"
@@ -18,11 +18,15 @@
     {
       "name": "Dmitry Kirilyuk",
       "email": "gk.joker@gmail.com"
+    },
+    {
+      "name": "Marcio Mendonça Mancine Dantas",
+      "email": "marcio@vitta.com.br"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/edwardhotchkiss/mongoose-paginate.git"
+    "url": "https://github.com/vitta-health/mongoose-paginate.git"
   },
   "license": "MIT",
   "keywords": [
