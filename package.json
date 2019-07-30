@@ -1,5 +1,5 @@
 {
-  "name": "monpaginate",
+  "name": "@vitta-health/mongoose-paginate",
   "description": "Pagination plugin for Mongoose",
   "version": "5.0.3",
   "author": {
