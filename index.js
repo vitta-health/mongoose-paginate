@@ -1,10 +1,10 @@
 var Promise = require('bluebird');
 
 /**
- * @param {Object}              [query={}]
- * @param {Object}              [options={}]
+ * @param {Object}                [query={}]
+ * @param {Object}                [options={}]
  * @param {Object|String}         [options.select]
- * @param {Object}         [options.collation]
+ * @param {Object}                [options.collation]
  * @param {Object|String}         [options.sort]
  * @param {Array|Object|String}   [options.populate]
  * @param {Boolean}               [options.lean=false]
@@ -12,7 +12,7 @@ var Promise = require('bluebird');
  * @param {Number}                [options.offset=0] - Use offset or page to set skip position
  * @param {Number}                [options.page=1]
  * @param {Number}                [options.limit=10]
- * @param {Function}            [callback]
+ * @param {Function}              [callback]
  *
  * @returns {Promise}
  */
@@ -43,8 +43,7 @@ function paginate(query, options, callback) {
     }
 
     var promises = {
-        docs:  Promise.resolve([]),
-        count: this.count(query).exec()
+        docs:  Promise.resolve([])
     };
 
     if (limit) {
@@ -74,6 +73,8 @@ function paginate(query, options, callback) {
             });
         }
     }
+
+    promises.count = this.count(query).exec();
 
     return Promise.props(promises)
         .then(function(data) {
