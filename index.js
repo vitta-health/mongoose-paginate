@@ -74,7 +74,11 @@ function paginate(query, options, callback) {
         }
     }
 
-    promises.count = this.count(query).exec();
+    let countQuery = this.find(query)
+                         .select(select)
+                         .collation(collation);
+
+    promises.count = this.count(countQuery).exec();
 
     return Promise.props(promises)
         .then(function(data) {
