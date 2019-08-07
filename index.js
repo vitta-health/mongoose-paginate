@@ -43,7 +43,8 @@ function paginate(query, options, callback) {
     }
 
     var promises = {
-        docs:  Promise.resolve([])
+        docs:  Promise.resolve([]),
+        count: this.count(this.find(query).collation(collation)).exec()
     };
 
     if (limit) {
@@ -73,12 +74,6 @@ function paginate(query, options, callback) {
             });
         }
     }
-
-    let countQuery = this.find(query)
-                         .select(select)
-                         .collation(collation);
-
-    promises.count = this.count(countQuery).exec();
 
     return Promise.props(promises)
         .then(function(data) {
